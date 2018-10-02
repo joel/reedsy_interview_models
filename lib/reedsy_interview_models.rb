@@ -5,4 +5,5 @@ module ReedsyInterviewModels
   extend ActiveSupport::Autoload
 
   autoload :Entity
+  autoload :Adapters
 end
