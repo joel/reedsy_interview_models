@@ -6,4 +6,5 @@ module ReedsyInterviewModels
 
   autoload :Entity
   autoload :Adapters
+  autoload :Mapping
 end
