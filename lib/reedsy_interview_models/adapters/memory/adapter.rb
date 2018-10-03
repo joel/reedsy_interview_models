@@ -11,6 +11,11 @@ module ReedsyInterviewModels
           collection.deserialize(dataset.all)
         end
 
+        def find(collection:, id:)
+          record = dataset.find(id)
+          collection.deserialize([record]).first
+        end
+
         def create(collection:, entity:)
           Memory::Command.new(dataset: dataset, collection: collection).create(entity)
         end

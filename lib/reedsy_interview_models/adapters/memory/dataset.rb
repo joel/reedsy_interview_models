@@ -27,6 +27,12 @@ module ReedsyInterviewModels
           end
         end
 
+        def find(id)
+          records.fetch(id) do
+            raise Exceptions::RecordNotFound, "could not find #{name} with #{identity} = #{id}"
+          end
+        end
+
         def all
           records.values
         end

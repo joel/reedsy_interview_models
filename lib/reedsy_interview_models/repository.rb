@@ -1,8 +1,6 @@
 module ReedsyInterviewModels
   module Repository
 
-    class RecordNotFound < StandardError; end
-
     def initialize(adapter:, collection:)
       @adapter    = adapter
       @collection = collection
@@ -14,6 +12,10 @@ module ReedsyInterviewModels
 
     def all
       @adapter.all(@collection)
+    end
+
+    def find(id)
+      @adapter.find(collection: @collection, id: id)
     end
   end
 end

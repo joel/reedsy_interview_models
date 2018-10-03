@@ -25,6 +25,10 @@ module ReedsyInterviewModels
           it '#all' do
             expect(subject.all(collection).sample).to be_instance_of(Book)
           end
+
+          it '#find' do
+            expect(subject.find(collection: collection, id: 1)).to be_instance_of(Book)
+          end
         end
 
         context 'without records' do

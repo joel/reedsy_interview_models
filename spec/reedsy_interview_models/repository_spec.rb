@@ -14,6 +14,8 @@ module ReedsyInterviewModels
       }.from(nil).to(1)
 
       expect(repository.all.first).to be_instance_of(Book)
+
+      expect(repository.find(1)).to be_instance_of(Book)
     end
 
   end

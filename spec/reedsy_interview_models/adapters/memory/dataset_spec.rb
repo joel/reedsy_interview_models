@@ -15,6 +15,8 @@ module ReedsyInterviewModels
           }.from(nil).to(1)
 
           expect(dataset.all).to eql([ id: 1, name: 'A Record' ])
+
+          expect(dataset.find(1)).to eql({ id: 1, name: 'A Record' })
         end
       end
     end
