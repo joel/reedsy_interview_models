@@ -14,10 +14,10 @@ module ReedsyInterviewModels
       end
 
       context 'from an entity' do
-        let(:entity) { Book.new({ id: 42, title: 'Sapiens' }) }
+        let(:entity) { Book.new({ title: 'Sapiens' }) }
 
         it '#serialize' do
-          expect(collection.serialize(entity)).to eql({ id: 42, title: 'Sapiens' })
+          expect(collection.serialize(entity)).to eql({ title: 'Sapiens' })
         end
       end
 

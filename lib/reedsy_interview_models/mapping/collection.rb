@@ -33,7 +33,6 @@ module ReedsyInterviewModels
 
       def serialize(entity)
         {}.tap do |_attributes|
-          _attributes[:id] = entity.id
           @attributes.each do |name, options|
             _attributes[name] = entity.public_send(name)
           end
