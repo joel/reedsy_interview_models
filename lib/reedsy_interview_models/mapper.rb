@@ -12,7 +12,7 @@ module ReedsyInterviewModels
       Model.mapper(self)
     end
 
-    def [] name
+    def [](name)
       collection(name.to_sym)&.repository
     end
 

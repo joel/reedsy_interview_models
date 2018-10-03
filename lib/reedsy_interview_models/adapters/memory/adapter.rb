@@ -4,25 +4,27 @@ module ReedsyInterviewModels
       class Adapter
 
         def initialize
-          @dataset = Dataset.new
+          @datasets = Hash.new { |hash, name| hash[name] = Dataset.new }
         end
 
         def all(collection)
-          collection.deserialize(dataset.all)
+          collection.deserialize(dataset(collection).all)
         end
 
         def find(collection:, id:)
-          record = dataset.find(id)
+          record = dataset(collection).find(id)
           collection.deserialize([record]).first
         end
 
         def create(collection:, entity:)
-          Memory::Command.new(dataset: dataset, collection: collection).create(entity)
+          Memory::Command.new(dataset: dataset(collection), collection: collection).create(entity)
         end
 
         private
 
-        attr_reader :dataset
+        def dataset(collection)
+          @datasets[collection]
+        end
 
       end
     end
