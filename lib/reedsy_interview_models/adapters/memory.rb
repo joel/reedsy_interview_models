@@ -8,6 +8,7 @@ module ReedsyInterviewModels
         autoload :Command
         autoload :Condition
         autoload :Query
+        autoload :Adapter
       end
     end
   end
