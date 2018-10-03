@@ -8,4 +8,5 @@ module ReedsyInterviewModels
   autoload :Adapters
   autoload :Mapping
   autoload :Repository
+  autoload :Model
 end
