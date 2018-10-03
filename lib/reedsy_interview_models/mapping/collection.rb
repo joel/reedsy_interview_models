@@ -2,10 +2,11 @@ module ReedsyInterviewModels
   module Mapping
     class Collection
 
-      attr_reader :attributes
+      attr_reader :attributes, :name, :adapter
 
-      def initialize(&blk)
+      def initialize(adapter, name, &blk)
         @attributes = {}
+        @adapter    = adapter
 
         instance_eval(&blk) if block_given?
       end
@@ -15,6 +16,14 @@ module ReedsyInterviewModels
           @entity = klass
         else
           @entity
+        end
+      end
+
+      def repository(klass = nil)
+        if klass
+          @repository = klass.new(adapter: adapter, collection: self)
+        else
+          @repository
         end
       end
 
