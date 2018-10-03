@@ -5,7 +5,7 @@ module ReedsyInterviewModels
         let(:record)  {{ name: 'A record' }}
         let(:dataset) { Dataset.new('test') }
 
-        it do
+        it 'insert a record' do
           expect {
             dataset.insert(record)
           }.to change {
