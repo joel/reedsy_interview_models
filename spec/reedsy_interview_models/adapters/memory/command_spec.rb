@@ -4,7 +4,7 @@ module ReedsyInterviewModels
       RSpec.describe Command do
         include_context 'book'
 
-        let(:dataset) { Dataset.new('test') }
+        let(:dataset) { Dataset.new }
         let(:command) { described_class.new(dataset: dataset, collection: collection) }
         let(:record)  {{ title: 'A Title' }}
         let(:entity)  { Book.new(record) }

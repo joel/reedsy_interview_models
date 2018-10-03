@@ -3,7 +3,7 @@ module ReedsyInterviewModels
     module Memory
       RSpec.describe Dataset do
         let(:record)  {{ name: 'A Record' }}
-        let(:dataset) { Dataset.new('test') }
+        let(:dataset) { described_class.new }
 
         it 'insert a record' do
           expect {

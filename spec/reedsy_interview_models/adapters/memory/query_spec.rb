@@ -12,7 +12,7 @@ module ReedsyInterviewModels
           }
         end
 
-        let(:dataset) { Dataset.new(collection) }
+        let(:dataset) { Dataset.new }
 
         before { expect(dataset).to receive(:records) { records } }
 

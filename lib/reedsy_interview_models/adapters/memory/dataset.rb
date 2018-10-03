@@ -15,8 +15,7 @@ module ReedsyInterviewModels
 
         attr_reader :records, :name
 
-        def initialize(name)
-          @name        = name
+        def initialize
           @records     = {}
           @primary_key = PrimaryKey.new
         end
