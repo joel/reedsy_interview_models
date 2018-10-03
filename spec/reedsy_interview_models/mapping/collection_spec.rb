@@ -1,17 +1,7 @@
 module ReedsyInterviewModels
   module Mapping
     RSpec.describe Collection do
-      class Book
-        include Entity
-        attributes :title
-      end
-
-      let(:collection) do
-        Collection.new do
-          entity Book
-          attribute :title
-        end
-      end
+      include_context 'book'
 
       context 'from a record' do
         let(:record) { collection.deserialize([{ id: 42, title: 'Sapiens' }]).first }
