@@ -7,6 +7,7 @@ module ReedsyInterviewModels
         autoload :Dataset
         autoload :Command
         autoload :Condition
+        autoload :Query
       end
     end
   end

@@ -28,6 +28,10 @@ module ReedsyInterviewModels
           end
         end
 
+        def all
+          records.values
+        end
+
         def size
           records.size
         end
