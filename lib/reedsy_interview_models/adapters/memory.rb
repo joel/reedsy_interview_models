@@ -6,6 +6,7 @@ module ReedsyInterviewModels
       eager_autoload do
         autoload :Dataset
         autoload :Command
+        autoload :Condition
       end
     end
   end
