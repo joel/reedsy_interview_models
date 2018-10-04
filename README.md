@@ -22,7 +22,34 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+class Book
+  include ReedsyInterviewModels::Entity
+  attributes :title
+end
+
+class BookRepository
+  include ReedsyInterviewModels::Repository
+end
+
+adapter = ReedsyInterviewModels::Adapters::Memory::Adapter.new
+mapper  = ReedsyInterviewModels::Mapper.new(adapter) do
+  collection :books do
+    entity Book
+    repository BookRepository
+
+    attribute :title
+  end
+end
+
+repository = mapper[:books]
+book = Book.new({ title: '21 Lessons for the 21st Century' })
+repository.create(book)
+#=> 1
+
+repository.all
+#=> [#<Book:0x00007f82a1199b20 @title="21 Lessons for the 21st Century", @id=1>]
+```
 
 ## Development
 
